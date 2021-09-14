@@ -1,0 +1,48 @@
+/* pages/map/index.wxss */
+.map_page{}
+.map{
+    width: 100%;
+    height: 60vh;
+}
+.map_footer{
+    position: absolute;
+    bottom: 0;
+    min-height: 40vh;
+    z-index: 100;
+    width: 100%;
+    padding: 30rpx;
+}
+.input_box{
+    /* width:100%; */
+    /* margin: 20rpx auto; */
+}
+.input_btn{
+    width: 100%;
+    margin: 0 auto;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    color: #999999;
+    background-color: #F7F7F7;
+    border-radius: 30rpx;
+    font-size: 28rpx;
+}
+.input_placeholder{
+    color: #b9b8b8;
+    font-size: 24rpx;
+}
+
+.relate_address{
+    margin-top: 40rpx;
+}
+.addr_items{
+    margin-bottom: 40rpx;
+}
+.addr_title{
+    color: #333;
+}
+.addr_distance{
+    font-size: 24rpx;
+    margin-top: 10rpx;
+    color: #888888;
+}

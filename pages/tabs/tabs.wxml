@@ -1,0 +1,21 @@
+<view class="tabs">
+  <view class="title">
+    <view class="tab-item {{item.isActive?'active':''}}" wx:for="{{tabs}}"  wx:key="index">
+      <text class="value" bindtap="handletep" data-index="{{index}}">{{item.value}}</text>
+      <text wx:if="{{item.id==0||item.id==2}}" data-index="{{index}}" bindtap="downList" class="iconfont icon-xiala-liebiao {{item.id==2?'icon-shangla1':''}}"></text>
+    </view>
+    <view class="choose">
+      <view class="iconfont {{flag?'icon-wenzhangpailie-':'icon-pailie'}}" bindtap="changeList" data-index="{{flag}}"></view>
+      <view class="iconfont switch" bindtap="switch" data-close="{{false}}">
+        筛选
+        <text class="iconfont icon-shaixuan"></text>
+      </view>
+    </view>
+  </view>
+    <scroll-view class="tags" scroll-x>
+      <text class="tag {{item.isActive?'actives':'' }}" bindtap="changeTag" data-index="{{index}}" wx:for="{{tags}}" wx:key="index">{{item.value}}</text>
+    </scroll-view>
+  <view class="tabscontent">
+    <slot></slot>
+  </view>
+</view>

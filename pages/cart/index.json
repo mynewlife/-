@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mySelect":"../../components/select/select"
+  },
+  "navigationBarTitleText": "购物车"
+}

@@ -1,0 +1,84 @@
+<view class="header">
+  <!-- 搜索框 -->
+  <view class="hd_bar_wrap">
+    <view class="hd_bar" style="top: 0px;">
+      <view class="hd_search_frm">
+        <view class="hd_virtual_input">搜索我的订单</view>
+      </view>
+      <!-- <view class="hd_me">
+      <view class="hd_search_btn_red">搜索</view>
+    </view> -->
+    </view>
+  </view>
+
+  <!-- nav框 -->
+  <view class="my_nav">
+    <view class="my_nav_inner">
+      <view class="my_nav_list">
+        <view bindtap="bandle" data-index="{{index}}" class="list_item" wx:for="{{nav}}" wx:key="text">
+          <view class="item {{num==index?'cur':''}}">{{item.text}}</view>
+        </view>
+        <view class="iconfont icon-xiala1"></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 商品详情 -->
+<view class="order_all" >
+<view class="order" wx:if="{{orderList}}" wx:for="{{orderList}}" wx:key="index">
+  <!-- 商品 -->
+  <view class="order_box" wx:for="{{item.childern}}" wx:for-item="item1" wx:for-index="index1"  wx:key="index1">
+    <!-- 头部 -->
+    <view class="order_head">
+      <view class="shop_icon">
+        <image
+          src="https://img12.360buyimg.com/img/s40x40_jfs/t1/92233/26/19755/1782/5ea0194fEfa9c005c/fa406240530e25b6.png">
+        </image>
+      </view>
+      <view class="shop_title">
+        <text class="title">拾味食品专营店</text>
+      </view>
+      <view class="order_state cur" wx:if="{{item.status==1}}">等待付款</view>
+      <view class="order_state" wx:if="{{item.status==2}}">已完成</view>
+      <!-- <view class="order_state">等待付款</view> -->
+      <view class="order_del" wx:if="{{item.status==2}}"></view>
+    </view>
+    <!-- 内容 -->
+    <view class="order_item">
+      <view class="oi_content">
+        <view class="cover">
+          <view class="img">
+            <image
+              src="{{item1.img}}">
+            </image>
+          </view>
+        </view>
+        <view class="content">
+          <view class="desc">
+            {{item1.good_name.name}}
+          </view>
+        </view>
+        <view class="oi_num">×{{item1.num}}</view>
+      </view>
+      <view class="order_total_bar">
+        <view class="payment">
+          应付<text class="price">￥{{item1.money}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 底部按钮 -->
+    <view class="order_btn">
+      <view wx:if="{{item.status==2}}" class="oh_btn" >
+        再次购买
+      </view>
+      <view bindtap="buyAgain" data-id="{{item.order_id}}" wx:if="{{item.status==1}}" class="btn">去支付</view>
+      <view class="time" wx:if="{{item.status==1}}">支付剩余{{item.time}}</view>
+    </view>
+  </view>
+</view>
+</view>
+
+<view class="order_all" wx:if="{{orderList.length==0}}">
+  <image src="https://z3.ax1x.com/2021/08/27/hM3tSK.png"></image>
+</view>

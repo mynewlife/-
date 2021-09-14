@@ -1,0 +1,77 @@
+page {
+    padding-bottom: 90rpx;
+}
+.detail-swiper {
+    swiper {
+        height: 70vw;
+        text-align: center;
+        image {
+            width: 60%;
+        }
+    }
+}
+.goodsPrice {
+    padding: 10rpx;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: var(--themeColor);
+}
+.goods_row {
+    display: flex;
+    .goodsName {
+        flex:5;
+        padding: 0 10rpx;
+        display:-webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+    .goodsCollect{
+        flex:1;
+        border-left: 1px solid #ccc;
+        text-align: center;
+    }
+}
+.goods-info{
+    .title {
+        padding: 10rpx;
+        font-weight: 600;
+        font-size: 36rpx;
+        color: var(--themeColor)
+    }
+}
+.btm_tool {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 90rpx;
+    background-color: #fff;
+    font-size: 24rpx;
+    .item_tool {
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        button {
+            position: absolute;
+            top: 0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+    .car,.buy {
+        flex:2;
+        font-size: 32rpx;
+        color:#fff;
+        background-color: #ffa500;
+    }
+    .buy {
+        background-color: #eb4450;
+    }
+}

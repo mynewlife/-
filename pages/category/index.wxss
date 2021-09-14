@@ -1,0 +1,42 @@
+.cata {
+  height: 100%;
+}
+.cata .category {
+  display: flex;
+  height: calc( 100vh - 80rpx);
+}
+.cata .category .aside {
+  flex: 2;
+}
+.cata .category .aside .aside-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+}
+.cata .category .aside .active {
+  color: #be4450;
+}
+.cata .category .main {
+  flex: 5;
+}
+.cata .category .main .maingroup .main-title {
+  line-height: 80rpx;
+  height: 80rpx;
+  font-weight: 700;
+  /* text-align: center; */
+}
+.cata .category .main .maingroup .mainlist {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cata .category .main .maingroup .mainlist navigator {
+  width: 33.3%;
+  text-align: center;
+}
+.cata .category .main .maingroup .mainlist navigator image {
+  width: 50%;
+}
+page {
+  height: 100%;
+}

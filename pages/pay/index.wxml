@@ -1,0 +1,233 @@
+<view class="all">
+
+	<!-- 头部地址 -->
+	<navigator class="address_defalut_wrap" url="/pages/address/index">
+		<view>
+			<view class="address_defalut">
+				<ul>
+					<li>
+						<text>{{addresslist[0].name}}</text>
+						<text>{{addresslist[0].phone}}</text>
+					</li>
+					<li class="address">
+						<text>{{addresslist[0].detailed}}</text>
+					</li>
+				</ul>
+			</view>
+		</view>
+	</navigator>
+
+	<!-- 商品详情 -->
+	<view class="order_info">
+		<view
+		 class="cc"
+		 wx:for="{{shopOrder}}"
+		 wx:key="index"
+		>
+			<view class="shopbar">
+				<image src="https://img12.360buyimg.com/img/s60x60_jfs/t1/92233/26/19755/1782/5ea0194fEfa9c005c/fa406240530e25b6.png">
+				</image>
+				<text class="pop_vname">拾味食品专营店</text>
+			</view>
+			<ul class="commodity">
+				<li class="hproduct">
+					<view class="product_info">
+						<image src="{{item.img}}">
+						</image>
+						<view class="fn">
+							<!-- <text> -->
+							{{item.good_name.name}}
+							<!-- </text> -->
+						</view>
+						<view class="ccc">
+							<view
+							 class="sku_coll"
+							 wx:for="{{item.sku[1].specs}}"
+							 wx:key="index1"
+							 wx:for-item="item1"
+							 wx:for-index="index1"
+							>
+								<text wx:if="{{item.sku[1].specs.length-1!=index1 && item.sku[1].specs.length-2!=index1}}">{{item1}}</text>
+							</view>
+						</view>
+						<view class="sku_price">
+							<!-- <text class="price_area">¥<text class="large_text">32</text>.90</text> -->
+							<text class="price_area">¥<text class="large_text">{{item.price}}</text>
+							</text>
+						</view>
+					</view>
+					<view class="sku">
+						<view class="sku_num">×{{item.num}}</view>
+					</view>
+					<ul class="order_info_tips">
+						<li>
+							<image src="https://img11.360buyimg.com/jdphoto/s30x30_jfs/t24454/180/2585111474/1236/c5718bb0/5b863011Ncc8682f5.png">
+							</image>
+							支持7天无理由退货（拆封后不支持）
+						</li>
+						<li>
+							<image src="https://img11.360buyimg.com/jdphoto/s30x30_jfs/t26866/245/112279834/912/e70ec77a/5b863013Ne69c7156.png">
+							</image>
+							价格说明
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<view class="delivery">
+				<ul class="order_info_list">
+					<li class="shipping">
+						<text class="text">配送</text>
+						<view class="shipping_content">
+							<view class="p">快递运输</view>
+							<view class="type_justify">工作日、双休日与节假日均可送货</view>
+						</view>
+					</li>
+				</ul>
+				<view class="order_info_guarantee_v2">
+					<view class="title_area">
+						<view class="title">退换无忧</view>
+						<view class="title_desc">
+							退换货可获运费赔付或免费取件
+							<text class="icc"></text>
+						</view>
+					</view>
+					<view class="oper_area">
+						<view class="price">商家赠送</view>
+					</view>
+				</view>
+			</view>
+			<view class="buy">
+				<view class="buy_msg">留言</view>
+				<input
+				 type="text"
+				 placeholder="选填，给商家留言"
+				 maxlength="45"
+				/>
+			</view>
+		</view>
+	</view>
+
+	<!-- 商品总额 -->
+	<view class="buy_checkout">
+		<ul>
+			<li>
+				<view class="content">
+					<text class="text">商品总额</text>
+					<text class="jd_zh">¥{{totalPrice}}</text>
+				</view>
+			</li>
+			<li>
+				<view class="content">
+					<text class="text">运费</text>
+					<text class="cg_jd">免运费</text>
+				</view>
+			</li>
+			<li wx:if="{{show}}">
+				<view class="content">
+					<text class="text">优惠劵</text>
+					<text class="disabled">无可用</text>
+					<text class="iconfont icon-you-"></text>
+				</view>
+			</li>
+			<li wx:if="{{show}}">
+				<view class="content">
+					<text class="text">礼品卡</text>
+					<text class="disabled">无可用</text>
+					<text class="iconfont icon-you-"></text>
+				</view>
+			</li>
+			<li wx:if="{{show}}">
+				<view class="content">
+					<text class="text">红包<text class="info_btn">详情</text>
+					</text>
+					<text class="disabled">无可用</text>
+					<text class="iconfont icon-jinyong"></text>
+				</view>
+			</li>
+			<li class="disabled" wx:if="{{show}}">
+				<view class="content">
+					<text class="text">京豆<text class="icc"></text>
+					</text>
+					<text class="disabled">共586，未满1000，不可用</text>
+					<text class="iconfont icon-jinyong"></text>
+				</view>
+			</li>
+		</ul>
+		<view
+		 class="more_asset"
+		 bindtap="clishow"
+		 wx:if="{{show}}"
+		>
+			收起不可用资产
+			<view class="sel_arrow">
+				<text class="iconfont icon-xiala11"></text>
+			</view>
+		</view>
+		<view
+		 class="more_asset"
+		 bindtap="clishow"
+		 wx:else
+		>
+			优惠券、礼品卡、红包、京豆暂不可用
+			<view class="sel_arrow">
+				<text class="iconfont icon-xiala1"></text>
+			</view>
+		</view>
+		<view class="total_price">
+			总计:
+			<text class="price">￥{{totalPrice}}</text>
+		</view>
+	</view>
+
+	<view class="invoice">
+		<ul>
+			<li>
+				<view class="dis">
+					<text class="text">发票</text>
+					<view class="content">不开发票</view>
+					<text class="iconfont icon-you-"></text>
+				</view>
+			</li>
+		</ul>
+	</view>
+
+	<view class="payment">
+		<view class="wx_pay" catchtap="checkaff">
+			<view class="wx_pay_left">
+				<text class="iconfont icon-weixinzhifu"></text>
+				微信支付
+			</view>
+			<view class="iconfont {{checkeda?'icon-caozuochenggong':'icon-yuan1'}}"></view>
+			<!-- </view> -->
+		</view>
+		<view class="pay_ano" catchtap="checkbff">
+			<view class="wx_pay_left">
+				<text class="iconfont icon-pengyou"></text>
+				找人代付
+			</view>
+			<view class="iconfont {{checkedb?'icon-caozuochenggong':'icon-yuan1'}}"></view>
+		</view>
+	</view>
+
+	<view class="base">
+		<view class="base_left">
+			总计:
+			<text>￥{{totalPrice}}</text>
+		</view>
+		<view
+		 class="base_right"
+		 wx:if="{{checkeda}}"
+		 bindtap="wxpay"
+		>
+			微信支付
+		</view>
+		<view
+		 class="base_right_b"
+		 wx:if="{{checkedb}}"
+		 bindtap="wxrefund"
+		>
+			找人代付
+		</view>
+	</view>
+</view>
+

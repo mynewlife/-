@@ -1,0 +1,240 @@
+<view class="{{leftMenu?'':'index_shadow'}}" bindtap="handleMenuPull"></view>
+<view class="home_page">
+	<view class="index">
+		<view class="index_nav">
+			<view class="header_fixed">
+				<!-- 搜索框 -->
+				<Searchinput></Searchinput>
+				<!-- 菜单导航 -->
+				<view class="nav_menu">
+					<view class="menu_items">
+						<scroll-view
+						 scroll-x
+						 class="menu_item_text"
+						 scroll-left="{{scrollLeft}}"
+						 scroll-with-animation="{{true}}"
+						>
+							<view class="text_box">
+								<text class="item_text" wx:for="{{navData2}}" wx:key="*this" bindtap="handleNav">{{item}}</text>
+							</view>
+						</scroll-view>
+						<view class="menu_pull iconfont  {{leftMenu?'icon-xiala1':'icon-xiala11'}}" bindtap="handleMenuPull"></view>
+						<view class="menu_pull_all {{leftMenu?'':'menu_block'}}">
+							<view class="other_sort">全部分类</view>
+							<view
+							 class="all_sort {{index==MenuSort?'menu_active':''}}"
+							 wx:for="{{navData}}"
+							 wx:key="*this"
+							 wx:for-index="index"
+							 bindtap="handleMenuSort"
+							 data-index="{{index}}"
+							>
+								{{item}}
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="red_box"></view>
+		<!-- 轮播图 -->
+		<view class="swiper">
+			<swiper
+			 autoplay="{{true}}"
+			 indicator-dots="{{true}}"
+			 circular="{{true}}"
+			>
+				<swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+					<navigator>
+						<image mode="widthFix" src="{{item.image_src}}"></image>
+					</navigator>
+				</swiper-item>
+			</swiper>
+		</view>
+	</view>
+	<!-- 图片导航 -->
+	<view class="pic_nav">
+		<view
+		 class="pic_nav_items"
+		 wx:for="{{picNavList}}"
+		 wx:key="*this"
+		 wx:for-item="item"
+		>
+			<view class="item_img">
+				<image mode="widthFix" src="{{item.pic}}"></image>
+			</view>
+			<view class="item_title">{{item.text}}</view>
+		</view>
+	</view>
+	<!-- banner图 -->
+	<view class="index_banner">
+		<image mode="widthFix" src="/icon/banner.png"></image>
+	</view>
+	<!-- 限时疯抢 -->
+	<view class="seckill">
+		<view class="seckill_items">
+			<view class="seckill_title">
+				<view class="title_left">
+					<view class="title1_text">京东秒杀</view>
+					<view class="title2_time">
+						<view class="eighten">18点场</view>
+						<view class="count_down">00:0.:32</view>
+					</view>
+				</view>
+				<view class="right_more">
+					更多好货限时疯抢
+					<text class="">></text>
+				</view>
+			</view>
+			<scroll-view
+			 class="scroll"
+			 scroll-x="true"
+			 show-scrollbar="true"
+			 enhanced
+			>
+				<view class="scroll_box">
+					<view
+					 class="count_items"
+					 wx:for="{{secKill}}"
+					 wx:key="price"
+					>
+						<view class="count_item_img">
+							<image
+							 class=""
+							 src="{{item.pic}}"
+							 mode="widthFix"
+							/>
+						</view>
+						<view class="count_item_price">￥{{item.price}}</view>
+						<view class="pass_price">￥{{item.delPrice}}</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+		<!-- 品牌闪购 -->
+		<view class="brand">
+			<view class="brand_items">
+				<view class="brand_item_box">
+					<view class="brand_items_title">品牌闪购</view>
+					<view class="brand_items_subtitle">限时特卖</view>
+					<view class="brand_items_img">
+						<image
+						 class=""
+						 src="//img11.360buyimg.com/n7/s150x150_jfs/t1/196434/10/18943/124477/611dfed2E057ac4b0/d5e0599953401731.jpg.dpg"
+						 mode="widthFix"
+						/>
+					</view>
+				</view>
+			</view>
+			<view class="brand_items">
+				<view class="brand_item_box">
+					<view class="brand_items_title">排行榜</view>
+					<view class="brand_items_subtitle colored">跟榜购好物</view>
+					<view class="brand_items_img">
+						<image
+						 class=""
+						 src="//img11.360buyimg.com/n7/s150x150_jfs/t1/184904/18/20042/61820/611e3293Eae401eac/11ab33c7f0fa812c.jpg.dpg"
+						 mode="widthFix"
+						/>
+					</view>
+				</view>
+			</view>
+			<view class="brand_items">
+				<view class="brand_item_box">
+					<view class="brand_items_title">每日特价</view>
+					<view class="brand_items_subtitle colorora">9块9疯抢</view>
+					<view class="brand_items_img">
+						<image
+						 class=""
+						 src="//img11.360buyimg.com/n7/s150x150_jfs/t1/200007/18/3750/177649/611dc3ecE79a9605e/98861549cd1b727c.jpg.dpg"
+						 mode="widthFix"
+						/>
+					</view>
+				</view>
+			</view>
+			<view class="brand_items">
+				<view class="brand_item_box">
+					<view class="brand_items_title">新品首发</view>
+					<view class="brand_items_subtitle colorblue">全网抢先购</view>
+					<view class="brand_items_img">
+						<image
+						 class=""
+						 src="//img11.360buyimg.com/n7/s150x150_jfs/t1/205330/31/2707/782488/6124cd2bEb84fa0fb/7f7bf6d3d61fabe7.png"
+						 mode="widthFix"
+						/>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 东家小院 -->
+		<view class="east">
+			<view class="east_yard">
+				<view class="east_yard_box">
+					<view class="yard_title">
+						<view class="yard_title_text">东家小院</view>
+						<view class="yard_title_tag">小院种草></view>
+					</view>
+					<view class="yard_img">
+						<image
+						 class=""
+						 src="//img11.360buyimg.com/n7/s150x150_jfs/t1/183012/24/15397/202756/60f944fbE7500a05b/26abb1cd4ec026e4.jpg.dpg"
+						 mode="widthFix"
+						/>
+						<image
+						 class=""
+						 src="//img11.360buyimg.com/n7/s150x150_jfs/t1/205636/14/2808/156077/6125da02E334eb4df/05e22b7eed5423e3.jpg.dpg"
+						 mode="widthFix"
+						/>
+					</view>
+				</view>
+			</view>
+			<view class="east_yard">
+				<view class="east_yard_box">
+					<view class="yard_title">
+						<view class="yard_title_text">京东直播</view>
+						<view class="yard_title_tag purple">主播力荐></view>
+					</view>
+					<view class="yard_img">
+						<image
+						 class=""
+						 src="//img11.360buyimg.com/n7/s150x150_jfs/t1/180375/26/21090/121998/61279670Ec9b12245/6123ffee1d796414.jpg.dpg"
+						 mode="widthFix"
+						/>
+						<image
+						 class=""
+						 src="//img11.360buyimg.com/n7/s150x150_jfs/t20437/194/1993820603/461976/3760ddb3/5b4308b7N03a19b93.jpg.dpg"
+						 mode="widthFix"
+						/>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 首页商品列表 -->
+	<view class="goods_list">
+		<view
+		 class="goods_list_items"
+		 wx:for="{{recommentList}}"
+		 wx:key="*this"
+		>
+			<view class="list_items_img">
+				<image
+				 class=""
+				 src="{{item.img}}"
+				 mode="widthFix"
+				/>
+			</view>
+			<view class="list_items_text">
+				<view class="list_items_title">{{item.info}}</view>
+				<view class="list_items_tags">{{item.tag}}</view>
+				<view class="list_items_price">
+					￥
+					<text>{{item.price}}</text>
+				</view>
+				<view class="list_items_comment">5万+条评论 96%好评率</view>
+			</view>
+		</view>
+
+	</view>
+</view>
+

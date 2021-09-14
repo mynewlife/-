@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mySearch":"../../components/mySearch/mySearch",
+    "tabs":"../../components/tabs/tabs",
+    "mySelect":"../../components/select/select"
+  },
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle": "dark",
+   "navigationStyle":"custom"
+}

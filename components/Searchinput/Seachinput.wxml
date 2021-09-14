@@ -1,0 +1,9 @@
+<view class="searchinput iconfont">
+  <navigator url="/pages/search/index" open-type="navigate">
+    <view class="search_box">
+      <view class="search_icon iconfont icon-sousuo"><text>短款外衣</text></view>
+      <view class="teke_photo iconfont icon-xiangji"></view>
+    </view>
+  </navigator>
+  <view class="free iconfont icon-yuangou-jiuban"></view>
+</view>

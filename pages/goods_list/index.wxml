@@ -1,0 +1,136 @@
+<mySearch search="{{search}}"></mySearch>
+<view class="list" style="margin-top:{{navHeight}}px">
+  <tabs tabs="{{tabs}}" tags="{{tags}}" priceFlag="{{priceFlag}}" binddownList="close" bindtabschange="handlechange" bindtagschange="tagChange" flag="{{flag}}" bindcustom="changelist" bindswitch="close" bindgogo="pricesDown">
+    <block wx:if="{{tabs[0].isActive}}">
+      <navigator class="content {{flag?'content1':''}}" wx:for="{{goodslist}}" wx:key="goods_id" url="../goods_detail/index?goods_id={{item.good_id}}">
+        <view class="left">
+          <image mode="widthFix" wx:if="{{item.img[0]}}" src="{{item.img}}" style="height:100rpx;"></image>
+          <image mode="widthFix" wx:else src="https://img13.360buyimg.com/n1/s180x180_jfs/t1/181229/38/20016/131938/611d3198Eadac8dd6/9e822f0b73267ecb.jpg"></image>
+        </view>
+        <view class="right">
+          <view class="name" wx:if="{{item.good_name}}">{{item.good_name}}</view>
+          <view class="name" wx:else>没有名字没有名字没有名字没有名字没有名字没有名字没有名字</view>
+          <view class="tags">
+            <view class="tag">快速</view>
+            <view class="tag">便捷</view>
+          </view>
+          <view class="price">￥ {{item.price}}</view>
+          <view class="comment">10万+条评论 94%好评</view>
+          <view class="shop">加加林京东</view>
+        </view>
+      </navigator>
+    </block>
+    <block wx:if="{{tabs[1].isActive}}">
+      <navigator class="content {{flag?'content1':''}}" wx:for="{{goodslist}}" wx:key="goods_id" url="../goods_detail/index?goods_id={{item.good_id}}">
+        <view class="left">
+          <image mode="widthFix" wx:if="{{item.img[0]}}" src="{{item.img}}"></image>
+          <image mode="widthFix" wx:else src="https://img13.360buyimg.com/n1/s180x180_jfs/t1/181229/38/20016/131938/611d3198Eadac8dd6/9e822f0b73267ecb.jpg"></image>
+        </view>
+        <view class="right">
+          <view class="name" wx:if="{{item.good_name}}">{{item.good_name}}</view>
+          <view class="name" wx:else>没有名字没有名字没有名字没有名字没有名字没有名字没有名字</view>
+          <view class="tags">
+            <view class="tag">便捷</view>
+            <view class="tag">便捷</view>
+          </view>
+          <view class="price">￥ {{item.price}}</view>
+          <view class="comment">10万+条评论 94%好评</view>
+          <view class="shop">加加林京东</view>
+        </view>
+      </navigator>
+    </block>
+    <block wx:if="{{tabs[2].isActive}}">
+      <navigator class="content {{flag?'content1':''}}" wx:for="{{goodslistup}}" wx:key="goods_id" url="../goods_detail/index?goods_id={{item.good_id}}">
+        <view class="left">
+          <image mode="widthFix" wx:if="{{item.img[0]}}" src="{{item.img}}"></image>
+          <image mode="widthFix" wx:else src="https://img13.360buyimg.com/n1/s180x180_jfs/t1/181229/38/20016/131938/611d3198Eadac8dd6/9e822f0b73267ecb.jpg"></image>
+        </view>
+        <view class="right">
+          <view class="name" wx:if="{{item.good_name}}">{{item.good_name}}</view>
+          <view class="name" wx:else>没有名字没有名字没有名字没有名字没有名字没有名字没有名字</view>
+          <view class="tags">
+            <view class="tag">便捷</view>
+            <view class="tag">便捷</view>
+          </view>
+          <view class="price">￥ {{item.price}}</view>
+          <view class="comment">10万+条评论 94%好评</view>
+          <view class="shop">加加林京东</view>
+        </view>
+      </navigator>
+    </block>
+    <!-- 筛选侧边栏 -->
+    <view class="down {{show3?'show3':''}}" style="top:{{navHeight}}px">
+      <view class="downItem {{TheOne==index?'biger':''}}" wx:for="{{downList}}" wx:key="index" bindtap="changeTheOne" data-index="{{index}}">
+        {{item.value}}
+      </view>
+    </view>
+    <view class="aside {{show2?'':'close'}}" style="height: calc(100vh - {{navHeight}}px); top:{{navHeight}}px">
+      <view class="address" catchtap="address">
+        <view class="adressTitle">配送至</view>
+        <view class="addressDetail ">
+          <text class="text">{{addressData[addressIndex].detailed}}</text>
+          <text class="icon-you- iconfont"></text>
+        </view>
+      </view>
+      <view class="tagbox">
+        <view class="tagitem {{item.isActive?'active':'' }}" wx:for="{{tags}}" wx:key="index" bindtap="tagChange" data-tag="{{index}}">
+          {{item.value}}
+        </view>
+      </view>
+      <view class="class">
+        <view class="adressTitle">分类</view>
+        <view class="classSele">
+          全部分类
+          <text class="icon-you- iconfont"></text>
+        </view>
+      </view>
+      <view class="choosePrice">
+        <view class="adressTitle">价格</view>
+        <view class="priceMax">
+          <input type="number" model:value="{{min}}" bindinput="handlePrice" placeholder="最低价" />
+          <text class="blank">-</text>
+          <input type="number" model:value="{{max}}" bindinput="handlePrice" placeholder="最高价" />
+        </view>
+        <view class="priceSection">
+          <view class="priceItem" wx:for="{{prices}}" wx:key="index" bindtap="handlePrice" data-index="{{index}}">
+            <view class="prices">{{item.min}}-{{item.max}}</view>
+            <view class="scale">{{item.scale}}%选择</view>
+          </view>
+        </view>
+      </view>
+      <view class="brand">
+        <view class="adressTitle" style="text-aligin:right;"><view class="brands">品牌</view><view class="brandbox"><view class="brandTag" wx:for="{{tagsearch}}" wx:key="index">{{item}}</view></view> </view>
+        <view class="brandBox">
+          <view class="branditem {{item.isActive?'active':'' }}" bindtap="tagChange" data-index="{{index}}" wx:for="{{brand}}" wx:key="index">
+            {{item.value}}
+          </view>
+        </view>
+      </view>
+      <view class="buttonBtn">
+        <view class="reset" bindtap="reset">重置</view>
+        <view class="sure" bindtap="sureTo">确认</view>
+      </view>
+    </view>
+    <view class="aside new" wx:if="{{address}}" style="height: calc(100vh - {{navHeight}}px); top:{{navHeight}}px">
+      <view class="newLife" bindtap="address">
+        <view class="back" catchtap="address">
+          <text class="icon-z043 iconfont"></text>
+          返回
+        </view>
+        <view class="adressTitle addressTo">配送至</view>
+      </view>
+      <mySelect class="mySelect" current="{{city}}" bind:parentEvent='city' wx:if="{{dis}}" />
+      <view class="addressList">
+        <view class="listItem" wx:for="{{addressData}}" wx:key="index" bindtap="handleAddress" data-index="{{index}}">
+          <text class="circle {{index==addressIndex?'heightCircle':''}}"></text>
+          <text class="text">{{item.detailed}}</text>
+        </view>
+      </view>
+      <view class="buttonBtn">
+        <!-- <input name="name" value='{{isaddress}}' disabled='true' /> -->
+        <view class="sure" bindtap='cityFocus'>选择其他收货地址</view>
+      </view>
+    </view>
+    <view class="shadow" wx:if="{{show}}" bindtap="close" style="height: calc(100vh - {{navHeight}}px);  top:{{navHeight}}px"></view>
+  </tabs>
+</view>

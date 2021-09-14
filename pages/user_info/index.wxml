@@ -1,0 +1,87 @@
+<view class="user_info_page">
+	<!-- 点击昵称的弹窗 -->
+	<view
+	 class="nick_name_modify"
+	 wx:if="{{isNickname}}"
+	 bindtap="handleShadow"
+	>
+	</view>
+	<view class="modify_cont" wx:if="{{isNickname}}">
+		<view class="cont_text">
+			<view class="modify_title">修改昵称</view>
+			<view class="modify_input">
+				<input
+				 type="text"
+				 placeholder="请输入昵称"
+				 placeholder-class="nick_name_place"
+				 model:value="{{nickName}}"
+				/>
+			</view>
+			<view class="modify_alert">限制4-20个字符，可由中英文、数字、“-”、“—”组成</view>
+		</view>
+		<view class="modify_btn">
+			<button class="cancle" bindtap="handleCancle">取消</button>
+			<button class="confirm" bindtap="handleComfirm">确认</button>
+		</view>
+	</view>
+	<!-- 个人信息表单 -->
+	<view class="user_info_form">
+		<view class="user_name">
+			<input
+			 type="file"
+			 name="image"
+			 id="file"
+			 class="file"
+			 accept="image/jpg,image/jpeg,image/png,image/gif"
+			 bindtap="upLodeImg"
+			 disabled="{{true}}"
+			/>
+			<view class="name_title">头像</view>
+			<view class="name_english icon_head">
+				<image class="" src="{{icon}}" />
+				<text class="iconfont icon-you-"></text>
+			</view>
+		</view>
+		<view class="user_name" bindtap="userName">
+			<view class="name_title">用户名</view>
+			<view class="name_english">jd_NWgJrWFyciNq</view>
+		</view>
+		<view class="user_name" bindtap="handleModifyName">
+			<view class="name_title">昵称</view>
+			<view class="name_english">{{nickName}}
+				<text class="iconfont icon-you-"></text>
+			</view>
+		</view>
+		<view class="user_name">
+			<view class="name_title">性别</view>
+			<view class="name_english">保密
+				<text class="iconfont icon-you-"></text>
+			</view>
+		</view>
+		<picker
+		 class=""
+		 mode="date"
+		 range="[]"
+		 range-key=""
+		 value=""
+		 bindchange="handleBirth"
+		>
+			<view class="user_name">
+				<view class="name_title">
+					出生日期
+				</view>
+				<view class="name_english">{{birthday}}
+					<text class="iconfont icon-you-"></text>
+				</view>
+			</view>
+		</picker>
+	</view>
+	<view class="logo">
+		<image
+		 class=""
+		 src="/icon/jd_logo.png"
+		 mode="widthFix"
+		/>
+	</view>
+</view>
+

@@ -1,0 +1,58 @@
+<view class="cata">
+	<Searchinput></Searchinput>
+	<view class="category">
+		<scroll-view scroll-y="{{true}}" class="aside">
+			<view
+			 bindtap="itemtep"
+			 data-index="{{index1}}"
+			 class="aside-item {{index1==index? 'active':'' }}"
+			 wx:for="{{leftdata}}"
+			 wx:for-item="item1"
+			 wx:for-index="index1"
+			 wx:key="cat_id"
+			>
+				{{item1.type_name}}
+			</view>
+		</scroll-view>
+		<scroll-view
+		 scroll-y="{{true}}"
+		 scroll-top="{{scrollTop}}"
+		 class="main"
+		>
+			<view
+			 class="maingroup"
+			 wx:for="{{rightdata}}"
+			 wx:for-item="item2"
+			 wx:for-index="index2"
+			 wx:key="cat_id"
+			>
+				<view class="main-title">{{item2.type_name}}</view>
+				<view class="mainlist">
+					<navigator
+					 hover-class="none"
+					 class="listitem"
+					 wx:for="{{item2.children}}"
+					 wx:for-item="item3"
+					 wx:for-index="index3"
+					 wx:key="good_type_id"
+					 url="../goods_list/index?good_type_id={{item3.parent_id}}&search2={{item3.type_name}}&search1={{item2.type_name}}"
+					>
+						<image
+						 wx:if="{{item3.pic}}"
+						 src="{{item3.pic}}"
+						 mode="widthFix"
+						></image>
+						<image
+						 class=""
+						 wx:else
+						 src="../../icon/微信图片_20210824150858.jpg"
+						 mode="widthFix"
+						/>
+						<view class="name">{{item3.type_name}}</view>
+					</navigator>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+</view>
+

@@ -1,0 +1,131 @@
+@import "../../styles/iconfont.wxss";
+
+.title {
+  display: flex;
+//   position: fixed;
+  position: relative;
+  padding-right: 125rpx;
+}
+
+.tabs {
+  position: relative;
+}
+
+.tabs .tab-item {
+  flex: 1;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
+}
+
+.tabs .active {
+  font-weight: 600;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 14rpx;
+  width: 30rpx;
+  height: 15rpx;
+  border-radius: 0 0 30rpx 30rpx;
+  border-bottom: 2px solid var(--themeColor);
+}
+
+.icon-xiala-liebiao:before {
+  content: "\e626";
+  font-size: 16rpx;
+}
+
+.icon-shangla1 {
+  position: relative;
+}
+
+.value {
+  padding: 0 10rpx;
+}
+
+.icon-shangla1:after {
+  content: "\e60a";
+  font-size: 18rpx;
+  position: absolute;
+  right: 0;
+  top: -32rpx;
+}
+
+.choose {
+  position: absolute;
+  padding: 0 20rpx;
+  background-color: #fff;
+  z-index: 1;
+  right: 0;
+}
+
+.icon-pailie {
+  height: 80rpx;
+  /* padding-bottom: 10rpx; */
+}
+
+.icon-pailie::before {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon-shaixuan {
+  font-size: 20rpx;
+}
+
+.tags {
+  display: flex;
+  width: 80vw;
+  padding-right: 100rpx;
+  justify-content: space-around;
+  white-space: nowrap;
+}
+
+.tag {
+  display: inline-block;
+  margin-left: 20rpx;
+  padding: 7rpx 15rpx;
+  border-radius: 20rpx;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 24rpx;
+  border: 1px solid transparent;
+}
+
+.tabscontent {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.iconfont {
+  position: relative;
+}
+
+.icon-wenzhangpailie- {
+  display: flex;
+  justify-content: end;
+  height: 80rpx;
+}
+
+.icon-wenzhangpailie-::before {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.actives {
+  border: 1px solid red !important;
+  color: red;
+}
+.switch{
+  padding: 7rpx 15rpx;
+}

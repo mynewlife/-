@@ -1,0 +1,119 @@
+/* pages/user_info/index.wxss */
+.user_info_page{
+    background-color: #F7F7F7;
+    min-height: 100vh;
+}
+.nick_name_modify{
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    width:100%;
+    min-height: 100vh;
+    background-color:rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+.modify_cont{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    bottom: 0;
+    width: 100%;
+    min-height: 40vh;
+    background-color:#fff;
+    z-index: 100;
+    padding: 30rpx;
+}
+.cont_text{
+
+}
+.modify_title{
+    text-align: center;
+    font-weight: bold;
+
+}
+.modify_input{
+    border-bottom: 1px solid #e2e1e1;
+    margin-bottom: 15rpx;
+}
+.modify_input input{
+    margin-bottom: 7rpx;
+}
+.nick_name_place{
+    font-size: 24rpx;
+    color: #999;
+}
+.modify_alert{
+    font-size: 23rpx;
+    color: #999;
+}
+.modify_btn{
+    display: flex;
+}
+.cancle{
+    border-radius: 30rpx;
+    font-size: 24rpx;
+    width: 30%;
+    margin-right: 20rpx;
+    font-weight: normal;
+    background-color: transparent;
+    border: 1px solid #CCCCCC;
+}
+.confirm{
+    border-radius: 30rpx;
+    font-size: 24rpx;
+    width: 30%;
+    font-weight: normal;
+    margin-left: 20rpx;
+    background-color: red;
+    color: #fff;
+}
+.user_info_form{
+    background-color: #fff;
+}
+.user_name{
+    display: flex;
+    position: relative;
+    margin-left: 20rpx;
+    line-height: 90rpx;
+    font-size: 33rpx;
+    border-bottom: 1px solid #F7F7F7;
+}
+.name_title{
+    flex: 6;
+    color: #333;
+}
+.name_english{
+    flex: 4;
+    text-align: right;
+    font-size: 24rpx;
+    color: #999;
+    padding-right: 20rpx;
+
+}
+.icon_head{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+}
+.icon_head image{
+    width: 86rpx;
+    height: 86rpx;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.logo{
+    width: 27%;
+    margin: 0 auto;
+    margin-top: 670rpx;
+}
+.file{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* background-color: antiquewhite; */
+}

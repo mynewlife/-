@@ -1,0 +1,16 @@
+
+<!-- 自定义顶部导航 S -->
+<view class="navbar custom-class" style='height:{{navHeight}}px;'>
+  <view class="navbar-action-wrap navbar-action-group row item-center" style='top:{{navTop}}px;'>
+      <image style="width: 17.5px; height: 20px; " src="https://ico.dongtiyan.com/tu-130.png" catchtap="goBack"></image>
+  </view>
+  <view class='navbar-title' style='top:{{navTop}}px'>
+    <view class="search-input">
+      <span class="search-con">
+        <view class="search-img" bindtap="go" wx:for="{{search}}" wx:key="index">
+            <text class="nametext" >{{item}}</text> <text style="font-size:12px">x</text>
+        </view>
+      </span>
+    </view>
+  </view>
+</view>

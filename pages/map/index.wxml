@@ -1,0 +1,14 @@
+<view class="map_page">
+    <map class="map" name="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="20" bindtap="handlelongitude"></map>
+    <view class="map_footer">
+        <view class="input_box">
+            <input class="input_btn" placeholder-class="input_placeholder iconfont icon-sousuo" placeholder=" 搜索地点"></input>
+        </view>
+        <view class="relate_address">
+            <view class="addr_items">
+                <view class="addr_title">成都高新科技孵化园9号园E座（武侯区）</view>
+                <view class="addr_distance">100m内|武侯区益州大道北段1539号</view>
+            </view>
+        </view>
+    </view>
+</view>

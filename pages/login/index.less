@@ -1,0 +1,296 @@
+/* pages/login/index.wxss */
+.help {
+  text-align: right;
+  margin-right: 30rpx;
+}
+
+.login_img {
+  margin-top: 10rpx;
+}
+
+.login {
+  display: block;
+  text-align: center;
+  margin: 20rpx 30rpx 0 30rpx;
+  // width: 90%;
+  padding: 18rpx 0rpx;
+  background-color: rgb(23, 176, 37);
+  color: #fff;
+  font-weight: 400;
+  border-radius: 90rpx;
+}
+
+.login_ra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10rpx 30rpx;
+  font-size: 23rpx;
+
+  checkbox-group {
+    line-height: 15rpx;
+    // display: flex;
+    // height: 100%;
+
+    // transform: ;
+    // width: 100%;
+    checkbox {
+      border-radius: 50%;
+      // height: 100%;
+      // transform: translateX(-130rpx);
+      // transition: scale(.5);
+      transform: scale(.5);
+      //   -webkit-transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  /* 重写 checkbox 样式 */
+  /* 未选中的 背景样式 */
+  checkbox .wx-checkbox-input {
+    border-radius: 50%;
+    /* 圆角 */
+    width: 46rpx;
+    /* 背景的宽 */
+    height: 46rpx;
+    /* 背景的高 */
+    transform: translate(28rpx, -7rpx);
+
+  }
+
+  /* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+  checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    border: 1rpx solid #FF783B;
+    background: #FF783B;
+  }
+
+  /* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+  checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    border-radius: 50%;
+    /* 圆角 */
+    width: 40rpx;
+    /* 选中后对勾大小，不要超过背景的尺寸 */
+    height: 40rpx;
+    /* 选中后对勾大小，不要超过背景的尺寸 */
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 30rpx;
+    /* 对勾大小 30rpx */
+    color: #fff;
+    /* 对勾颜色 白色 */
+    background: transparent;
+    // transform: translate(-50%, -50%) scale(1);
+    // -webkit-transform: translate(-50%, -50%) scale(1);
+    // transform: translateX(130rpx);
+  }
+
+  text {
+    color: red;
+  }
+}
+
+.rest_login {
+  // position: relative;
+  padding: 30rpx 20rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  .top {
+    // width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wire {
+      flex: auto;
+      // width: 30%;
+      // width: 100%;
+      height: 1rpx;
+      background-color: #ddd;
+    }
+
+    .text {
+      margin: 0 20rpx;
+      color: #bbb;
+      font-size: 23rpx;
+    }
+  }
+
+  .one {
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .icon-shoujiyanzheng {
+      color: #ea9518;
+      font-size: 90rpx;
+      margin-bottom: 7rpx;
+    }
+    .icon-weixin3 {
+      // color: #fff;
+      color: rgb(70,187,54);
+      font-size: 90rpx;
+      margin-bottom: 7rpx;
+    }
+
+    .text {
+      color: #bbb;
+      font-size: 23rpx;
+    }
+  }
+}
+
+//
+.phone {
+  padding: 0 50rpx;
+
+  .mobie_phone {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 60rpx;
+    // padding-top: 20rpx;
+    // padding-bottom: 20rpx;
+    overflow: hidden;
+    // margin-top: 40rpx;
+    background: #fff;
+    border-bottom: 2rpx solid #efefef;
+
+    label {
+      // display: flex;
+      // flex-wrap: nowrap;
+      // justify-content: center;
+      // align-items: center;
+      position: absolute;
+      width: 150rpx;
+      height: 100rpx;
+      top: 0;
+      left: 0;
+      // line-height: 80rpx;
+
+      .area {
+        // float: left;
+        // font-family: PingFangSC-Semibold;
+        // display: inline-block;
+        text-align: center;
+        width: 100rpx;
+      }
+
+      .icon-xiala1 {
+        margin-left: 12rpx;
+      }
+    }
+
+    .acc_input {
+      // width: 100%;
+      padding-left: 130rpx;
+    }
+  }
+
+  .code {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    margin-top: 20rpx;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    // height: 60rpx;
+    padding-top: 20rpx;
+    // padding-bottom: 20rpx;
+    // margin-bottom: 20rpx;
+    overflow: hidden;
+    // margin-top: 40rpx;
+    background: #fff;
+    border-bottom: 2rpx solid #efefef;
+
+    .a_input {
+      margin-bottom: 20rpx;
+      padding-right: 60rpx;
+    }
+
+    .text_btn {
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      border: none;
+      border-left: 1rpx solid #ccc;
+      background: #fff;
+      border-radius: 0;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 25rpx;
+      height: 46rpx;
+      line-height: 35rpx;
+      text-align: center;
+      border-left: 1px solid #ccc;
+      font-size: 28rpx;
+      min-width: 200rpx;
+      color: #848689;
+      // padding-bottom: 20rpx;
+    }
+  }
+
+  .btn {
+    margin-top: 50rpx;
+    padding: 18rpx;
+    color: #fff;
+    width: 100%;
+    background-color: rgb(242, 38, 12);
+    border-radius: 50rpx;
+    text-align: center;
+  }
+
+  checkbox-group {
+    line-height: 13rpx;
+    margin-top: 10rpx;
+    /* 重写 checkbox 样式 */
+    /* 未选中的 背景样式 */
+    checkbox .wx-checkbox-input {
+      border-radius: 50%;
+      /* 圆角 */
+      width: 46rpx;
+      /* 背景的宽 */
+      height: 46rpx;
+      /* 背景的高 */
+      transform: translate(15rpx, -2rpx) scale(.5); //缩小
+      // transform: translate(28rpx, -7rpx); //位移
+    }
+
+    /* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+    checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+      border: 1rpx solid #FF783B;
+      background: #FF783B;
+    }
+
+    /* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+    checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+      border-radius: 50%;
+      /* 圆角 */
+      width: 40rpx;
+      /* 选中后对勾大小，不要超过背景的尺寸 */
+      height: 40rpx;
+      /* 选中后对勾大小，不要超过背景的尺寸 */
+      line-height: 40rpx;
+      text-align: center;
+      font-size: 30rpx;
+      /* 对勾大小 30rpx */
+      color: #fff;
+      /* 对勾颜色 白色 */
+      background: transparent;
+      // transform: translate(-50%, -50%) scale(1);
+      // -webkit-transform: translate(-50%, -50%) scale(1);
+    }
+    label {
+      font-size: 23rpx;
+      // height: 10rpx;
+      // line-height: 20rpx;
+    }
+    text {
+      color: red;
+    }
+  }
+}

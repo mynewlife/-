@@ -1,0 +1,348 @@
+@font-face {
+  font-family: "iconfont";
+  /* Project id 2505407 */
+  src: url('//at.alicdn.com/t/font_2505407_x11z8kxvceb.woff2?t=1629448399857') format('woff2'), url('//at.alicdn.com/t/font_2505407_x11z8kxvceb.woff?t=1629448399857') format('woff'), url('//at.alicdn.com/t/font_2505407_x11z8kxvceb.ttf?t=1629448399857') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-pailie:before {
+  content: "\e643";
+}
+.icon-shaixuan:before {
+  content: "\e628";
+}
+.icon-wenzhangpailie-:before {
+  content: "\e67f";
+}
+.icon-sousuo:before {
+  content: "\e61f";
+}
+.icon-sandian:before {
+  content: "\e627";
+}
+.icon-dingweiweizhi:before {
+  content: "\e61c";
+}
+.icon-xiala1:before {
+  content: "\e7dc";
+}
+.icon-xiala11:before {
+  content: "\e62c";
+}
+.icon-yuangou-jiuban:before {
+  content: "\e681";
+}
+.icon-xiangji:before {
+  content: "\e67e";
+}
+.icon-zengjiatianjiajiajian:before {
+  content: "\e61d";
+}
+.icon-guanbi1:before {
+  content: "\e61b";
+}
+.icon-you-:before {
+  content: "\e63e";
+}
+.icon-xiangxia:before {
+  content: "\e71a";
+}
+.icon-resume-line:before {
+  content: "\e64a";
+}
+.icon-shezhi1:before {
+  content: "\e619";
+}
+.icon-gerenziliao:before {
+  content: "\e618";
+}
+.icon-huati:before {
+  content: "\e616";
+}
+.icon-llianjie:before {
+  content: "\ea0d";
+}
+.icon-weixin1:before {
+  content: "\e614";
+}
+.icon-weibo1-copy:before {
+  content: "\e615";
+}
+.icon-liulan1:before {
+  content: "\e672";
+}
+.icon-liulan2:before {
+  content: "\e64b";
+}
+.icon-liulan:before {
+  content: "\e663";
+}
+.icon-tupian:before {
+  content: "\eee9";
+}
+.icon-biaoqing:before {
+  content: "\e636";
+}
+.icon-touxiang1:before {
+  content: "\ea74";
+}
+.icon-touxiang:before {
+  content: "\e61a";
+}
+.icon-zhuanhuan:before {
+  content: "\e7c5";
+}
+.icon-guanbi:before {
+  content: "\e6c9";
+}
+.icon-weibo1:before {
+  content: "\e666";
+}
+.icon-weixin:before {
+  content: "\e6ea";
+}
+.icon-pinglun:before {
+  content: "\e60d";
+}
+.icon-fenxiang:before {
+  content: "\e60e";
+}
+.icon-zan:before {
+  content: "\e60f";
+}
+.icon-shuaxin:before {
+  content: "\e62f";
+}
+.icon-jiangxu:before {
+  content: "\e613";
+}
+.icon-caozuochenggong:before {
+  content: "\e65b";
+}
+.icon-shuoming1:before {
+  content: "\e658";
+}
+.icon-z043:before {
+  content: "\e609";
+}
+.icon-right:before {
+  content: "\e60c";
+}
+.icon-shangla1:before {
+  content: "\e60a";
+}
+.icon-haoping:before {
+  content: "\e617";
+}
+.icon-shangla:before {
+  content: "\e6ce";
+}
+.icon-xiala:before {
+  content: "\e608";
+}
+.icon-shuoming:before {
+  content: "\e64c";
+}
+.icon-xiala-liebiao:before {
+  content: "\e626";
+}
+.icon-yichangye:before {
+  content: "\e6b2";
+}
+.icon-xiangqingye:before {
+  content: "\e73b";
+}
+.icon-liebiaoye:before {
+  content: "\e611";
+}
+.icon-dash-board:before {
+  content: "\e655";
+}
+.icon-tuxing:before {
+  content: "\e68c";
+}
+.icon-jieguoye:before {
+  content: "\e607";
+}
+.icon-gerenye:before {
+  content: "\e86c";
+}
+.icon-bianji:before {
+  content: "\e81c";
+}
+.icon-quanping:before {
+  content: "\e606";
+}
+.icon-tixing:before {
+  content: "\e605";
+}
+.icon-wenti:before {
+  content: "\e62b";
+}
+.icon-sousu:before {
+  content: "\e604";
+}
+.icon-cuowu:before {
+  content: "\e603";
+}
+.icon-shoujihao:before {
+  content: "\e60b";
+}
+.icon-shezhi:before {
+  content: "\e68a";
+}
+.icon-Git:before {
+  content: "\e662";
+}
+.icon-weibo:before {
+  content: "\e6e5";
+}
+.icon-zhifubao:before {
+  content: "\e6a6";
+}
+.icon-taobao:before {
+  content: "\e612";
+}
+.icon-jiarugouwuche1:before {
+  content: "\e646";
+}
+.icon-jiarugouwuche:before {
+  content: "\e99f";
+}
+.icon-guanzhu:before {
+  content: "\e610";
+}
+.icon-shangyiye:before {
+  content: "\e6af";
+}
+.icon-xiayiye:before {
+  content: "\e602";
+}
+.icon-gouwuchekong:before {
+  content: "\e601";
+}
+.icon-douyin:before {
+  content: "\e600";
+}
+.title {
+  display: flex;
+  position: fixed;
+  /* top: 83px; */
+  padding-right: 125rpx;
+  width: 100%;
+  background-color: #fff;
+}
+.tabs {
+  position: relative;
+}
+.tabs .tab-item {
+  flex: 1;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
+}
+.tabs .active {
+  font-weight: 600;
+}
+.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 14rpx;
+  width: 30rpx;
+  height: 15rpx;
+  border-radius: 0 0 30rpx 30rpx;
+  border-bottom: 2px solid var(--themeColor);
+}
+.icon-xiala-liebiao:before {
+  content: "\e626";
+  font-size: 16rpx;
+}
+.icon-shangla1 {
+  position: relative;
+}
+.value {
+  padding: 0 10rpx;
+}
+.icon-shangla1:after {
+  content: "\e60a";
+  font-size: 18rpx;
+  position: absolute;
+  right: 0;
+  top: -32rpx;
+}
+.choose {
+  position: absolute;
+  padding: 0 20rpx;
+  background-color: #fff;
+  z-index: 1;
+  right: 0;
+}
+.icon-pailie {
+  height: 80rpx;
+  /* padding-bottom: 10rpx; */
+}
+.icon-pailie::before {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.icon-shaixuan {
+  font-size: 20rpx;
+}
+.tags {
+  display: flex;
+  position:fixed;
+  /* top: 80rpx; */
+  width: 80vw;
+  padding-bottom: 20rpx;
+  justify-content: space-around;
+  white-space: nowrap;
+  background-color: #fff;
+}
+.tag {
+  display: inline-block;
+  margin-left: 20rpx;
+  padding: 7rpx 15rpx;
+  border-radius: 20rpx;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 24rpx;
+  border: 1px solid transparent;
+}
+.tabscontent {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 135rpx;
+  width: 100%;
+  overflow: hidden;
+  justify-content: space-between;
+}
+.iconfont {
+  position: relative;
+}
+.icon-wenzhangpailie- {
+  display: flex;
+  justify-content: end;
+  height: 80rpx;
+}
+.icon-wenzhangpailie-::before {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.actives {
+  border: 1px solid red !important;
+  color: red;
+}
+.switch {
+  padding: 7rpx 15rpx;
+}

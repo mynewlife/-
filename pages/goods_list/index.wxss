@@ -1,0 +1,409 @@
+.content {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 20rpx;
+}
+.content .left {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rpx;
+}
+.content .left image {
+  width: 100%;
+}
+.content .right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.content .right .name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.content .right .price {
+  color: var(--themeColor);
+  font-size: 32rpx;
+}
+.content1 {
+  display: block;
+  width: 50%;
+}
+.content1 .left image {
+  height: 300rpx !important;
+}
+.content1 .right {
+  padding: 0 20rpx;
+}
+.tags {
+  display: flex;
+  justify-content: start;
+  color: rgba(0, 0, 0, 0.5);
+}
+.tags .tag {
+  padding: 0 10rpx;
+  font-size: 20rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 30%;
+  margin-right: 20rpx;
+}
+.comment,
+.shop {
+  font-size: 20rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+.aside,
+.shadow {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  background-color: #f6f6f6;
+  border-radius: 20rpx 0 0 20rpx;
+  height: 100vh;
+  z-index: 999;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.aside .icon-you-,
+.shadow .icon-you- {
+  font-size: 20rpx;
+}
+.aside .address,
+.shadow .address,
+.aside .tagbox,
+.shadow .tagbox,
+.aside .class,
+.shadow .class,
+.aside .choosePrice,
+.shadow .choosePrice,
+.aside .brand,
+.shadow .brand {
+  display: flex;
+  padding: 25rpx;
+  justify-content: space-between;
+  border-radius: 20rpx 0 0 20rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  align-items: center;
+}
+.aside .address .adressTitle,
+.shadow .address .adressTitle,
+.aside .tagbox .adressTitle,
+.shadow .tagbox .adressTitle,
+.aside .class .adressTitle,
+.shadow .class .adressTitle,
+.aside .choosePrice .adressTitle,
+.shadow .choosePrice .adressTitle,
+.aside .brand .adressTitle,
+.shadow .brand .adressTitle {
+  flex-shrink: 0;
+  font-size: 28rpx;
+  font-weight: 700;
+  text-align: center;
+}
+.aside .address .addressDetail,
+.shadow .address .addressDetail,
+.aside .tagbox .addressDetail,
+.shadow .tagbox .addressDetail,
+.aside .class .addressDetail,
+.shadow .class .addressDetail,
+.aside .choosePrice .addressDetail,
+.shadow .choosePrice .addressDetail,
+.aside .brand .addressDetail,
+.shadow .brand .addressDetail {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 24rpx;
+  color: red;
+  line-height: 40rpx;
+  padding: 0 10rpx;
+}
+.aside .address .addressDetail .text,
+.shadow .address .addressDetail .text,
+.aside .tagbox .addressDetail .text,
+.shadow .tagbox .addressDetail .text,
+.aside .class .addressDetail .text,
+.shadow .class .addressDetail .text,
+.aside .choosePrice .addressDetail .text,
+.shadow .choosePrice .addressDetail .text,
+.aside .brand .addressDetail .text,
+.shadow .brand .addressDetail .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.aside .address .addressDetail .icon-you-,
+.shadow .address .addressDetail .icon-you-,
+.aside .tagbox .addressDetail .icon-you-,
+.shadow .tagbox .addressDetail .icon-you-,
+.aside .class .addressDetail .icon-you-,
+.shadow .class .addressDetail .icon-you-,
+.aside .choosePrice .addressDetail .icon-you-,
+.shadow .choosePrice .addressDetail .icon-you-,
+.aside .brand .addressDetail .icon-you-,
+.shadow .brand .addressDetail .icon-you- {
+  color: black;
+}
+.aside .tagbox,
+.shadow .tagbox {
+  flex-wrap: wrap;
+  padding-right: 0;
+}
+.aside .tagbox .tagitem,
+.shadow .tagbox .tagitem {
+  box-sizing: border-box;
+  width: 30%;
+  padding: 5rpx;
+  margin-right: 3%;
+  text-align: center;
+  background-color: #f6f6f6;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  border: 1px solid transparent;
+}
+.aside .class,
+.shadow .class {
+  justify-content: space-between;
+}
+.aside .choosePrice,
+.shadow .choosePrice {
+  display: block;
+}
+.aside .choosePrice .adressTitle,
+.shadow .choosePrice .adressTitle {
+  margin-bottom: 20rpx;
+}
+.aside .choosePrice .priceMax,
+.shadow .choosePrice .priceMax {
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.aside .choosePrice .priceMax .blank,
+.shadow .choosePrice .priceMax .blank {
+  padding: 0 10rpx;
+}
+.aside .choosePrice .priceMax input,
+.shadow .choosePrice .priceMax input {
+  padding: 5rpx;
+  border-radius: 20rpx;
+  background-color: #f6f6f6;
+  text-align: center;
+}
+.aside .choosePrice .priceSection,
+.shadow .choosePrice .priceSection {
+  display: flex;
+}
+.aside .choosePrice .priceSection .priceItem,
+.shadow .choosePrice .priceSection .priceItem {
+  flex: 1;
+  text-align: center;
+  background-color: #f6f6f6;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+}
+.aside .choosePrice .priceSection .priceItem .prices,
+.shadow .choosePrice .priceSection .priceItem .prices {
+  font-size: 20rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.aside .choosePrice .priceSection .priceItem .scale,
+.shadow .choosePrice .priceSection .priceItem .scale {
+  font-size: 16rpx;
+}
+.aside .choosePrice .priceSection .priceItem:nth-child(-n+2),
+.shadow .choosePrice .priceSection .priceItem:nth-child(-n+2) {
+  margin-right: 20rpx;
+}
+.aside .brand,
+.shadow .brand {
+  display: block;
+  padding-right: 0;
+}
+.aside .brand .adressTitle,
+.shadow .brand .adressTitle {
+  margin-bottom: 20rpx;
+}
+.aside .brand .brandBox,
+.shadow .brand .brandBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+.aside .brand .brandBox .branditem,
+.shadow .brand .brandBox .branditem {
+  width: 30%;
+  padding: 5rpx 0;
+  margin-right: 3%;
+  text-align: center;
+  background-color: #f6f6f6;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  border: 1px solid transparent;
+}
+.aside .buttonBtn,
+.shadow .buttonBtn {
+  display: flex;
+  position: absolute;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  bottom: 0;
+  width: 100%;
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+}
+.aside .buttonBtn .reset,
+.shadow .buttonBtn .reset,
+.aside .buttonBtn .sure,
+.shadow .buttonBtn .sure {
+  flex: 1;
+  border: 1px solid black;
+  border-radius: 20rpx;
+  color: black;
+  padding: 10rpx 0;
+  text-align: center;
+}
+.aside .buttonBtn .sure,
+.shadow .buttonBtn .sure {
+  margin-left: 20rpx;
+  border: none;
+  background-color: red;
+  color: #fff;
+}
+.close {
+  right: -100%;
+}
+.active {
+  border: 1px solid red !important;
+  color: red;
+  background-color: pink;
+}
+.shadow {
+  width: 100%;
+  border-radius: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.down {
+  display: none;
+  position: fixed;
+  transition: all 0.3s;
+  width: 100%;
+  background-color: #f6f6f6;
+  z-index: 999;
+  padding: 20rpx;
+  border-radius: 0 0 20rpx 20rpx;
+}
+.down .downItem {
+  padding: 10rpx 0;
+}
+.down .biger {
+  padding-left: 25rpx;
+  position: relative;
+  font-weight: 700;
+}
+.down .biger::after {
+  position: absolute;
+  left: 0;
+  content: '√';
+  color: red;
+}
+.show3 {
+  display: block;
+}
+.new {
+  background-color: #fff;
+}
+.newLife {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.newLife .back {
+  font-size: 24rpx;
+  color: #ccc;
+}
+.newLife .back .icon-z043 {
+  font-size: 20rpx;
+}
+.newLife .addressTo {
+  font-weight: 700;
+  margin-right: 50%;
+  transform: translateX(50%);
+}
+.addressList {
+  padding: 20rpx;
+}
+.addressList .listItem {
+  display: flex;
+  padding-bottom: 20rpx;
+  justify-content: start;
+  align-items: center;
+  border: rgba(0, 0, 0, 0.1);
+}
+.addressList .listItem .circle {
+  flex-basis: 24rpx;
+  flex-shrink: 0;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+}
+.addressList .listItem .heightCircle {
+  border: 1px solid transparent;
+  background-color: red;
+  color: #fff;
+  position: relative;
+}
+.addressList .listItem .heightCircle::before {
+  position: absolute;
+  content: '√';
+  font-size: 16rpx;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.addressList .listItem .text {
+  padding-left: 20rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.mySelect {
+  position: fixed;
+  padding: 0 20rpx;
+  width: 100%;
+  background-color: #fff;
+  z-index: 9999;
+  overflow: hidden;
+}
+.adressTitle {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.adressTitle .brandbox {
+  display: flex;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.adressTitle .brandbox .brandTag {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 400;
+  padding-left: 20rpx;
+}

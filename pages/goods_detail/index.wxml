@@ -1,0 +1,455 @@
+<view class="{{showModalStatus?'pagr-hidden':''}}">
+  <view class="zhezhao" wx:if="{{isZhe}}" bindtap="menuIsHidden"></view>
+  <view class="tops">
+    <view class="t-left">
+      <view class="txts" bindtap="previousPage">
+        <text class="icon-z043 fanhui iconfont"></text>
+      </view>
+      <view class="line"></view>
+      <view class="txts">
+        <view class="menu" bindtap="openList">
+          <view class="menus"></view>
+          <view class="menus"></view>
+          <view class="menus"></view>
+        </view>
+      </view>
+      <view class="menu-list" wx:if="{{isZhe}}">
+        <navigator class="menu-list-items" wx:for="{{downp}}" wx:key="index" open-type="switchTab" url="{{item.path}}">
+          <view class="menu-item">
+            <view>
+              <text class="iconfont {{'icons'+index}} {{item.icon}}"></text>
+            </view>
+            <view>{{item.value}}</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class="t-right">
+      <view class=".txts">
+        <view>
+          <text class="iconfont icon-sousuo"></text>
+        </view>
+        <view>搜索京东商品</view>
+      </view>
+    </view>
+  </view>
+  <view class="detail-swiper">
+    <swiper autoplay="{{false}}" indicator-dots="{{false}}" circular="{{true}}" bindchange="swiperChange" current="{{currentSwiper}}">
+      <swiper-item wx:for="{{goodsDetail.img}}" wx:key="index">
+        <image mode="heightFix" src="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+    <view class="bannerNum">{{(currentSwiper+1)}}/{{goodsDetail.img.length}}</view>
+  </view>
+  <view class="information">
+    <view class="goodsPrice">
+      <view class="Price">
+        <view class="currentPrice">
+          <text class="sale">￥</text>
+          <text class="large_size">{{goodsDetail.price}}</text>
+        </view>
+      </view>
+      <view class="goodsCollect">
+        <text class="icon-guanzhu1 iconfont"></text>
+        <view>收藏</view>
+      </view>
+    </view>
+    <view class="goods_row">
+      <view class="goodsDiscounts">
+        <text>赠品</text>
+        <text>优惠套装</text>
+      </view>
+      <view class="goodsDiscount">
+        查看
+        <text class="icon-you- you iconfont"></text>
+      </view>
+    </view>
+    <view class="goods_row">
+      <view class="goodsName">{{goodsDetail.good_name.name}}</view>
+    </view>
+    <view class="goods_row">
+      <view class="goodsDesc">{{goodsDetail.goods_introduce}}</view>
+    </view>
+  </view>
+  <view class="choose">
+    <view class="item_floor">
+      <view class="sku_choose_info" id="skuWindow">已选</view>
+      <view class="sku_choose_desc">
+        <text id="skuChoose1" wx:if="{{checkde.length>0}}">
+          <text wx:for="{{checkde}}" wx:key="index">{{item.val}}</text>
+          <text>{{goodsNum}}个</text>
+        </text>
+        <text wx:else>
+          未选择颜色分类
+          <text>{{goodsNum}}个</text>
+        </text>
+        <view class="sku_service" id="ybArea3">
+          <text class="text">本商品支持原厂服务、京东保障服务、京东服务+，点击可选服务</text>
+        </view>
+      </view>
+      <view bindtap="openMantle" data-fl="1">
+        <text class="icon-sandian1 sandian iconfont"></text>
+      </view>
+    </view>
+    <view class="item_floor">
+      <view class="sku_choose_info" id="sendArea">送至</view>
+      <view class="sku_choose_desc">
+        <text id="skuChoose1">四川成都市高新区桂溪街道武侯区益州大道北段1595号成都高新科技孵化园9号园区E座(武侯区)</text>
+        <view class="sku_service" id="ybArea3">
+          <text class="text">今日17：00前完成下单，预计明日17：00前发货</text>
+        </view>
+      </view>
+      <view bindtap="openMantle" data-fl="2">
+        <text class="icon-sandian1 sandian iconfont"></text>
+      </view>
+    </view>
+    <view class="item_floor service">
+      <view class="sku_choose_desc">
+        <view class="services">
+          <text class=" tb icon-jieguoye iconfont"></text>
+          <text>99元免基础运费</text>
+        </view>
+        <view class="services">
+          <text class=" tb icon-jieguoye iconfont"></text>
+          <text>京东发货&售后</text>
+        </view>
+        <view class="services">
+          <text class=" tb icon-jieguoye iconfont"></text>
+          <text>7天无理由退货</text>
+        </view>
+        <view class="services">
+          <text class=" tb icon-jieguoye iconfont"></text>
+          <text>京准达</text>
+        </view>
+        <view class="services">
+          <text class=" tb icon-jieguoye iconfont"></text>
+          <text>211限时达</text>
+        </view>
+        <view class="services">
+          <text class=" tb icon-jieguoye iconfont"></text>
+          <text>京尊达</text>
+        </view>
+        <view class="services">
+          <text class=" tb icon-jieguoye iconfont"></text>
+          <text>预约送货</text>
+        </view>
+        <view class="services">
+          <text class=" tb icon-jieguoye iconfont"></text>
+          <text>部分收货</text>
+        </view>
+        <view class="services">
+          <text class=" tb icon-jieguoye iconfont"></text>
+          <text>送货上门</text>
+        </view>
+      </view>
+      <view bindtap="openMantle" data-fl="3">
+        <text class="icon-sandian1 sandian iconfont"></text>
+      </view>
+    </view>
+  </view>
+  <view class="evaluate">
+    <view class="eva_row">
+      <view class="com">评价</view>
+      <!-- <view class="com-right">
+        好评度95%<text class="icon-you- com-you iconfont"></text>
+      </view> -->
+    </view>
+    <view>暂无评论</view>
+    <!-- <view class="eva_rows">
+      <view class="com_card">
+        <text>清晰度高(5986)</text><text>反应超快(5208)</text>
+      </view>
+      <view class="com_card">
+        <text>设计一流(3746)</text><text>漂亮大方(3414)</text>
+      </view>
+    </view> -->
+    <!-- <view class="eva-k">
+      <view class="eva_row">
+        <view class="com_user">
+          <text class="icon-touxiang1 iconfont"></text>
+          <view>f*****</view>
+          <view><text class="icon-wuxingpingfen iconfont"></text><text class="icon-wuxingpingfen iconfont"></text><text
+              class="icon-wuxingpingfen iconfont"></text><text class="icon-wuxingpingfen iconfont"></text><text
+              class="icon-wuxingpingfen iconfont"></text></view>
+        </view>
+        <view class="com_card">
+          2021-8-10
+        </view>
+      </view>
+      <view class="eva_desc">设施评论的内容</view>
+      <view class="eva_pics">图片</view>
+    </view> -->
+    <!-- <view class="eva_more"><text>查看全部评价</text></view> -->
+  </view>
+  <!-- <view class="store">
+    <view class="store_row">
+      <text>这是店铺图片</text>
+      <text>NAME</text>
+      <text>标记</text>
+    </view>
+    <view class="store_row">
+      <view>
+        <view>1322万</view>
+        <view>粉丝人数</view>
+      </view>
+      <view>
+        <view>1322万</view>
+        <view>粉丝人数</view>
+      </view>
+    </view>
+    <view class="store_row">
+      <view>关注店铺</view>
+      <view>进入店铺</view>
+    </view>
+  </view> -->
+  <view class="recycle">
+    <image class="rec_img" src="/img/recycle.webp"></image>
+    <view class="rec_row">
+      <view class="rec_text">高价回收</view>
+      <view>旧品回收，免费估价，极速到账</view>
+    </view>
+    <text class="icon-you- recycle-you iconfont"></text>
+  </view>
+  <view class="gw_you_like">
+    <swiper current="{{likeNumber}}" bindchange="likeNumberChange">
+      <swiper-item class="gw_you_like_box" wx:for="{{goodList}}" wx:key="index">
+        <view class="goods" wx:for="{{item}}" wx:for-item="i" wx:for-index="j" wx:key="j">
+          <view class="img_wrap">
+            <image mode="center" src="{{i.img[0]}}"></image>
+          </view>
+          <view class="goods_names">{{i.good_name.name}}</view>
+          <view class="currentPrices">
+            <text class="sales">￥</text>
+            <text class="goods_prices">{{i.price}}</text>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+    <view class="bar" id="guessItemTab">
+      <view wx:for="{{goodList}}" wx:key="index" class="{{index==likeNumber?'cur':''}}"></view>
+    </view>
+  </view>
+  <view class="particulars">
+    <view class="details">
+      <view class="xiangqng">详情</view>
+      <view class="goods_det">规格参数</view>
+      <view class="goods_table">
+        <view class="spu" wx:for="{{goodsDetail.info[0].colour}}" wx:key="index">
+          <view>{{item.spu}}</view>
+          <view class="spu_val">{{item.val}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="introduce">
+      <view class="goods_det">商品介绍</view>
+      <view class="int_img" wx:for="{{goodsDetail.info[0].imgs}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+    </view>
+    <view class="recommend">
+      <view class="goods_det">包装售后</view>
+      <view id="detServer">本商品质保周期为1年质保，在此时间范围内可提交维修申请，具体请以厂家服务为准。</view>
+      <view>如因质量问题或故障，凭厂商维修中心或特约维修点的质量检测证明，享受7日内退货，15日内换货，15日以上在质保期内享受免费保修等三包服务！</view>
+      <view>
+        (注:如厂家在商品介绍中有售后保障的说明,则此商品按照厂家说明执行售后保障服务。)您可以查询本品牌在各地售后服务中心的联系方式，
+        <text class="link_1">请点击这儿查询......</text>
+      </view>
+      <view>售后服务电话：400-166-6888</view>
+      <view>
+        品牌官方网站：
+        <text class="link_1">http://www.oppo.com/</text>
+      </view>
+    </view>
+    <view class="fengg">
+      <view class="line"></view>
+      <view class="txt">服务承诺</view>
+      <view class="line"></view>
+    </view>
+    <view id="serverPromise">
+      京东商城向您保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票。凭质保证书及京东商城发票，可享受全国联保服务（奢侈品、钟表除外；奢侈品、钟表由京东联系保修，享受法定三包售后服务），与您亲临商场选购的商品享受相同的质量保证。京东商城还为您提供具有竞争力的商品价格和
+      <text class="link_1">运费政策</text>
+      ，请您放心购买！
+      <view class="for_separator"></view>
+      注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！
+    </view>
+    <view class="fengg">
+      <view class="line"></view>
+      <view class="txt">权利声明</view>
+      <view class="line"></view>
+    </view>
+    <view id="for_separator">
+      京东商城上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东商城重要的经营资源，未经许可，禁止非法转载使用。
+      <view>
+        <text class="for_separator">注：</text>
+        本站商品信息均来自于厂商，其真实性、准确性和合法性由信息拥有者（厂商）负责。本站不提供任何保证，并不承担任何法律责任。
+      </view>
+    </view>
+    <view class="fengg">
+      <view class="line"></view>
+      <view class="txt">价格说明</view>
+      <view class="line"></view>
+    </view>
+    <block>
+      <view>
+        <text class="for_separator">1.京东价：</text>
+        京东价为商品的销售价，是您最终决定是否购买商品的依据。
+      </view>
+      <view>
+        <text class="for_separator">2.划线价：</text>
+        商品展示的划横线价格为参考价，该价格可能是品牌专柜标价、商品吊牌价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品在京东平台上曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物时展示的不一致，该价格仅供您参考。
+      </view>
+      <view>
+        <text class="for_separator">3.折扣：</text>
+        如无特殊说明，折扣指销售商在原价、或划线价（如品牌专柜标价、商品吊牌价、厂商指导价、厂商建议零售价）等某一价格基础上计算出的优惠比例或优惠金额；如有疑问，您可在购买前联系销售商进行咨询。
+      </view>
+      <view>
+        <text class="for_separator">4.异常问题：</text>
+        商品促销信息以商品详情页“促销”栏中的信息为准；商品的具体售价以订单结算页价格为准；如您发现活动商品售价或促销信息有异常，建议购买前先联系销售商咨询。
+      </view>
+    </block>
+  </view>
+  <view class="mask" wx:if="{{showModalStatus}}" bindtap="hideModal"></view>
+  <view class="wrap" wx:if="{{showModalStatus}}" animation="{{animationData}}">
+    <view class="header">
+      <view class="header_back">返回</view>
+      <view class="header_title">
+        <text wx:if="{{showCan==1}}"></text>
+        <text wx:if="{{showCan==2}}">配送至</text>
+        <text wx:if="{{showCan==3}}">服务</text>
+      </view>
+      <view class="header_close" bindtap="cancel"></view>
+    </view>
+    <view wx:if="{{showCan==1}}">
+      <view class="body">
+        <view class="row">
+          <view class="showPic">
+            <image src="{{goodsDetail.img[0]}}"></image>
+          </view>
+          <view class="showjie">
+            <view class="showpicse">
+              <view class="currentPrice">
+                <text class="sale">￥</text>
+                <text class="large_size">{{goodsDetail.price}}</text>
+              </view>
+            </view>
+            <view class="checked">
+              已选
+              <text wx:for="{{checkde}}" wx:key="index">{{item.val}}</text>
+              <text>{{goodsNum}}个</text>
+            </view>
+          </view>
+        </view>
+        <view class="row">
+          <view>
+            <view wx:for="{{goodsDetail.info[0].edition.specList}}" wx:key="index">
+              <view class="tital">{{item.titel}}</view>
+              <view class="showList">
+                <view wx:for="{{item.list}}" wx:for-item="i" wx:for-index="j" wx:key="j" bindtap="chrckeds" data-index="{{j}}" data-titel="{{item.titel}}" class=" showList-item {{i.check?'check':''}}">
+                  {{i.val}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="row shuliangs">
+          <view class="tital">数量</view>
+          <view class="shuliang">
+            <view bindtap="shuliang" data-num="-1">-</view>
+            <view>{{goodsNum}}</view>
+            <view bindtap="shuliang" data-num="1">+</view>
+          </view>
+        </view>
+        <view class="row yes">
+          <view class="item_tool car " bindtap="handleCarAdd">加入购物车</view>
+          <view class="item_tool buy" bindtap="buys">立即购买</view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{showCan==2}}">
+      <view class="body">
+        <view class="address_layer_item">
+          <radio-group>
+            <radio></radio>
+          </radio-group>
+          <view class="text">四川成都市高新区桂溪街道武侯区益州大道北段1595号成都高新科技孵化园9号园区E座(武侯区)</view>
+        </view>
+      </view>
+      <view class="footer">
+        <view class="btn">选择其他地址</view>
+      </view>
+    </view>
+    <view wx:if="{{showCan==3}}">
+      <view class="body">
+        <view class="sku_desc">
+          <view class="sku_desc_item">
+            <text class=" tb icon-jieguoye iconfont"></text>
+            <text>99元免基础运费</text>
+            <view class="detail_serve_main_content">所选地址自营订单满99元免基础运费(20kg内)，超出重量加收1元/kg续重运费。</view>
+          </view>
+          <view class="sku_desc_item">
+            <text class=" tb icon-jieguoye iconfont"></text>
+            <text>京东发货&售后</text>
+            <view class="detail_serve_main_content">由 京东 发货, 并提供售后服务.</view>
+          </view>
+          <view class="sku_desc_item">
+            <text class=" tb icon-jieguoye iconfont"></text>
+            <text>7天无理由退货</text>
+            <view class="detail_serve_main_content">支持7天无理由退货</view>
+          </view>
+          <view class="sku_desc_item">
+            <text class=" tb icon-jieguoye iconfont"></text>
+            <text>京准达</text>
+            <view class="detail_serve_main_content">选择京准达服务，可指定精确时间点收货；若京东责任超时，即时赔付</view>
+          </view>
+          <view class="sku_desc_item">
+            <text class=" tb icon-jieguoye iconfont"></text>
+            <text>211限时达</text>
+            <view class="detail_serve_main_content">上午下单，下午送达</view>
+          </view>
+          <view class="sku_desc_item">
+            <text class=" tb icon-jieguoye iconfont"></text>
+            <text>京尊达</text>
+            <view class="detail_serve_main_content">轻奢尊贵礼遇的高端派送服务</view>
+          </view>
+          <view class="sku_desc_item">
+            <text class=" tb icon-jieguoye iconfont"></text>
+            <text>预约送货</text>
+            <view class="detail_serve_main_content">京东物流为该商品提供预约送货服务</view>
+          </view>
+          <view class="sku_desc_item">
+            <text class=" tb icon-jieguoye iconfont"></text>
+            <text>部分收货</text>
+            <view class="detail_serve_main_content">如果收件人收货时发现部分货物存在缺少配件、物流损等情形，京东物流提供订单半收服务</view>
+          </view>
+          <view class="sku_desc_item">
+            <text class=" tb icon-jieguoye iconfont"></text>
+            <text>送货上门</text>
+            <view class="detail_serve_main_content">京东快递为您提供送货上门服务</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <viwe class="btm_tool">
+    <view class="item_tool">
+      <view class="iconfont icon-gerenye"></view>
+      <view>客服</view>
+      <button open-type="contact"></button>
+    </view>
+    <view class="item_tool">
+      <view class="iconfont icon-llianjie"></view>
+      <view>分享</view>
+      <button open-type="share"></button>
+    </view>
+    <navigator class="item_tool" open-type="switchTab" url="../cart/index">
+      <view class="iconfont icon-jiarugouwuche1"></view>
+      <view>购物车</view>
+      <view class="shopNum"></view>
+      <view class="add {{isAdd?'donghua':''}}">+{{goodsNum}}</view>
+    </navigator>
+    <view class="item_tool car " bindtap="openMantle" data-fl="1">加入购物车</view>
+    <view class="item_tool buy" bindtap="openMantle" data-fl="1">
+      <view>立即购买</view>
+    </view>
+  </viwe>
+</view>
